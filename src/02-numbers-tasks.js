@@ -112,12 +112,11 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-// !НЕ РАБОТАЕТ
 function getAngleBetweenVectors(x1, y1, x2, y2) {
   const pow = x1 * x2 + y1 * y2;
   const modulX = Math.abs(Math.sqrt(x1 * x1 + y1 * y1));
   const modulY = Math.abs(Math.sqrt(x2 * x2 + y2 * y2));
-  const result = Math.cos(pow / (modulX * modulY));
+  const result = Math.acos(pow / (modulX * modulY));
   return result;
 }
 
@@ -201,7 +200,7 @@ function roundToPowerOfTen(/* num, pow */) {
  * See: https://en.wikipedia.org/wiki/Primality_test
  *
  * @param {number} n
- * @return {bool}
+ * @return {boolean}
  *
  * @example:
  *   4 => false
@@ -213,8 +212,20 @@ function roundToPowerOfTen(/* num, pow */) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+// !НЕ РАБОТАЕТ
+function isPrime(n) {
+  let result;
+  for (let i = 2; i <= Math.sqrt(n); i + 1) {
+    if (n % i === 0) {
+      result = false;
+    } else {
+      result = true;
+    }
+    if (n === 2) {
+      result = true;
+    }
+  }
+  return result;
 }
 
 /**
