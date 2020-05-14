@@ -279,6 +279,7 @@ function reverseInteger(num) {
  *   5436468789016589 => false
  *   4916123456789012 => false
  */
+// ! НЕ РЕШИЛА
 function isCreditCardNumber(/* ccn */) {
   throw new Error('Not implemented');
 }
@@ -323,6 +324,7 @@ function getDigitalRoot(num) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true
  */
+// ! НЕ РЕШИЛА
 function isBracketsBalanced(/* str */) {
   throw new Error('Not implemented');
 }
@@ -348,6 +350,7 @@ function isBracketsBalanced(/* str */) {
  *    365, 4  => '11231'
  *    365, 10 => '365'
  */
+// ! НЕ РЕШИЛА
 function toNaryString(/* num, n */) {
   throw new Error('Not implemented');
 }
