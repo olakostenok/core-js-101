@@ -125,8 +125,8 @@ function repeatString(value, count) {
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  return str.replace(value, '');
 }
 
 /**
@@ -160,7 +160,7 @@ function unbracketTag(str) {
 function convertToUpperCase(str) {
   return str.toUpperCase();
 }
-
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   НЕ РЕШЕННЫЕ    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 /**
  * Extracts e-mails from single string with e-mails list delimeted by semicolons
  *
