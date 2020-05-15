@@ -160,7 +160,7 @@ function unbracketTag(str) {
 function convertToUpperCase(str) {
   return str.toUpperCase();
 }
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   НЕ РЕШЕННЫЕ    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 /**
  * Extracts e-mails from single string with e-mails list delimeted by semicolons
  *
@@ -176,7 +176,10 @@ function convertToUpperCase(str) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
+// ! НЕ РЕШИЛА
 function extractEmails(/* str */) {
+  // const result = str.replace(/[;]/g, ',');
+  // return [str];
   throw new Error('Not implemented');
 }
 
@@ -203,6 +206,7 @@ function extractEmails(/* str */) {
  *             '└──────────┘\n'
  *
  */
+// ! НЕ РЕШИЛА
 function getRectangleString(/* width, height */) {
   throw new Error('Not implemented');
 }
@@ -224,6 +228,7 @@ function getRectangleString(/* width, height */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
+// ! НЕ РЕШИЛА
 function encodeToRot13(/* str */) {
   throw new Error('Not implemented');
 }
@@ -241,8 +246,14 @@ function encodeToRot13(/* str */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  let answer;
+  if (typeof (value) === 'string' || value instanceof String) {
+    answer = true;
+  } else {
+    answer = false;
+  }
+  return answer;
 }
 
 
@@ -270,6 +281,7 @@ function isString(/* value */) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
+// ! НЕ РЕШИЛА
 function getCardId(/* value */) {
   throw new Error('Not implemented');
 }

@@ -505,7 +505,6 @@ function findAllOccurences(arr, item) {
 function toStringList(arr) {
   return arr.toString();
 }
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! LAST !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 /**
  * Sorts the specified array by country name first and city name
@@ -642,9 +641,10 @@ function group(/* array, keySelector, valueSelector */) {
  *   [[1, 2], [3, 4], [5, 6]], (x) => x     =>   [ 1, 2, 3, 4, 5, 6 ]
  *   ['one','two','three'], x=>x.split('')  =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
-// !НЕ РЕШАЛА
-function selectMany(/* arr, childrenSelector */) {
-  throw new Error('Not implemented');
+function selectMany(arr, childrenSelector) {
+  let result = [];
+  result = arr.map((elem) => childrenSelector(elem).flat());
+  return result.flat();
 }
 
 
