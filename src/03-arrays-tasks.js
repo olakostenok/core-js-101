@@ -258,9 +258,8 @@ function getTail(arr, n) {
  *    +'20,21,22,23,24\n'
  *    +'30,31,32,33,34'
  */
-// ! НЕ РЕШИЛА
-function toCsvText(/* arr */) {
-  throw new Error('Not implemented');
+function toCsvText(arr) {
+  return arr.join('\n');
 }
 
 /**
@@ -315,9 +314,15 @@ function getMovingSum(arr) {
  * [ 'a', 'b', 'c' , null ]  => [ "b", null ]
  * [ "a" ] => []
  */
-// ! НЕ РЕШИЛА
-function getSecondItems(/* arr */) {
-  throw new Error('Not implemented');
+function getSecondItems(arr) {
+  const result = [];
+  arr.map((elem, i) => {
+    if (i % 2 !== 0) {
+      result.push(arr[i]);
+    }
+    return result;
+  });
+  return result;
 }
 
 
@@ -396,9 +401,31 @@ function getPositivesCount(arr) {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-// ! НЕ РЕШИЛА
-function sortDigitNamesByNumericOrder(/* arr */) {
-  throw new Error('Not implemented');
+function sortDigitNamesByNumericOrder(arr) {
+  const mass = [];
+  const result = [];
+  const numbers = {
+    zero: 0,
+    one: 1,
+    two: 2,
+    three: 3,
+    four: 4,
+    five: 5,
+    six: 6,
+    seven: 7,
+    eight: 8,
+    nine: 9,
+  };
+  arr.map((elem) => {
+    mass.push(numbers[elem]);
+    return mass;
+  });
+  mass.sort();
+  mass.map((elem) => {
+    result.push(Object.keys(numbers)[elem]);
+    return result;
+  });
+  return result;
 }
 
 /**
@@ -421,7 +448,7 @@ function getItemsSum(arr) {
   });
   return count;
 }
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! LAST !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 /**
  * Returns the number of all falsy value in the specified array
  *
@@ -478,7 +505,7 @@ function findAllOccurences(arr, item) {
 function toStringList(arr) {
   return arr.toString();
 }
-
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! LAST !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 /**
  * Sorts the specified array by country name first and city name
@@ -547,9 +574,8 @@ function getIdentityMatrix(/* n */) {
  *     0, 100 => [ 0, 1, 2, ..., 100 ]
  *     3, 3   => [ 3 ]
  */
-// ! НЕ РЕШИЛА
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  return Array(end - start + 1).fill().map((_, idx) => start + idx);
 }
 
 /**
@@ -563,10 +589,8 @@ function getIntervalArray(/* start, end */) {
  *   [ 'a', 'a', 'a', 'a' ]  => [ 'a' ]
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
-// ! НЕ РАБОТАЕТ
-function distinct(/* arr */) {
-  // return arr.reduce((unique, item) => unique.includes(item) ? unique : [...unique, item], []);
-  throw new Error('Not implemented');
+function distinct(arr) {
+  return [...new Set(arr)];
 }
 
 /**
