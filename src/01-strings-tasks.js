@@ -176,11 +176,8 @@ function convertToUpperCase(str) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-// ! НЕ РЕШИЛА
-function extractEmails(/* str */) {
-  // const result = str.replace(/[;]/g, ',');
-  // return [str];
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  return str.split(';');
 }
 
 /**
@@ -208,6 +205,22 @@ function extractEmails(/* str */) {
  */
 // ! НЕ РЕШИЛА
 function getRectangleString(/* width, height */) {
+  // let result;
+  // const topSide = '';
+  // const botSide = '';
+  // const midSide = '';
+  // const symb1 = '─';
+  // const symb2 = ' ';
+  // const symb3 = '│';
+  // if (width < 2 || height < 2) {
+  //   result = false;
+  // } else {
+  //   topSide ='┌' + symb1.repeat(width - 2) + '┐' + '\n';
+  //   midSide=symb3+symb2.repeat(width-2)+symb3+'\n';
+  //   botSide='└'+symb1.repeat(width-2)+'┘'+'\n';
+  //   result = topSide + midSide.repeat(height - 2) + botSide;
+  // }
+  // return result;
   throw new Error('Not implemented');
 }
 
