@@ -211,8 +211,8 @@ function findFirstSingleChar(str) {
  *
  * @param {number} a
  * @param {number} b
- * @param {bool} isStartIncluded
- * @param {bool} isEndIncluded
+ * @param {boolean} isStartIncluded
+ * @param {boolean} isEndIncluded
  * @return {string}
  *
  * @example
@@ -224,9 +224,25 @@ function findFirstSingleChar(str) {
  *   5, 3, true, true   => '[3, 5]'
  *
  */
-// ! НЕ РЕШИЛА
-function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
-  throw new Error('Not implemented');
+function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
+  let result;
+  if (a < b) {
+    if (isStartIncluded === true && isEndIncluded === true) {
+      result = `[${a}, ${b}]`;
+    }
+    if (isStartIncluded === false && isEndIncluded === false) {
+      result = `(${a}, ${b})`;
+    }
+    if (isStartIncluded === true && isEndIncluded === false) {
+      result = `[${a}, ${b})`;
+    }
+    if (isStartIncluded === false && isEndIncluded === true) {
+      result = `(${a}, ${b}]`;
+    }
+  } else {
+    result = `[${b}, ${a}]`;
+  }
+  return result;
 }
 
 
@@ -329,9 +345,27 @@ function getDigitalRoot(num) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true
  */
-// ! НЕ РЕШИЛА
-function isBracketsBalanced(/* str */) {
-  throw new Error('Not implemented');
+function isBracketsBalanced(str) {
+  function isMatch(left, right) {
+    return ((left === '(' && right === ')') || (left === '[' && right === ']') || (left === '{' && right === '}') || (left === '<' && right === '>'));
+  }
+  let result;
+  if (str.length % 2 !== 0) {
+    result = false;
+  }
+  const charArr = str.split('');
+  for (let i = 0; i < charArr.length; i += 1) {
+    if (isMatch(charArr[i], charArr[i + 1])) {
+      charArr.splice(i, 2);
+      i -= 2;
+    }
+  }
+  if (charArr.length === 0) {
+    result = true;
+  } else {
+    result = false;
+  }
+  return result;
 }
 
 
