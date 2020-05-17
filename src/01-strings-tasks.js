@@ -203,25 +203,23 @@ function extractEmails(str) {
  *             '└──────────┘\n'
  *
  */
-// ! НЕ РЕШИЛА
-function getRectangleString(/* width, height */) {
-  // let result;
-  // const topSide = '';
-  // const botSide = '';
-  // const midSide = '';
-  // const symb1 = '─';
-  // const symb2 = ' ';
-  // const symb3 = '│';
-  // if (width < 2 || height < 2) {
-  //   result = false;
-  // } else {
-  //   topSide ='┌' + symb1.repeat(width - 2) + '┐' + '\n';
-  //   midSide=symb3+symb2.repeat(width-2)+symb3+'\n';
-  //   botSide='└'+symb1.repeat(width-2)+'┘'+'\n';
-  //   result = topSide + midSide.repeat(height - 2) + botSide;
-  // }
-  // return result;
-  throw new Error('Not implemented');
+function getRectangleString(width, height) {
+  let result;
+  let topSide = '';
+  let bottomSide = '';
+  let middleSide = '';
+  const symb1 = '─';
+  const symb2 = ' ';
+  const symb3 = '│';
+  if (width < 2 || height < 2) {
+    result = false;
+  } else {
+    topSide = `┌${symb1.repeat(width - 2)}┐\n`;
+    middleSide = `${symb3}${symb2.repeat(width - 2)}${symb3}\n`;
+    bottomSide = `└${symb1.repeat(width - 2)}┘\n`;
+    result = topSide + middleSide.repeat(height - 2) + bottomSide;
+  }
+  return result;
 }
 
 
@@ -242,8 +240,14 @@ function getRectangleString(/* width, height */) {
  *
  */
 // ! НЕ РЕШИЛА
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  const normalLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ?!';
+  const encodeLetters = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm ?!';
+  const result = [];
+  for (let i = 0; i < str.length; i += 1) {
+    result.push(encodeLetters[normalLetters.indexOf(str[i])]);
+  }
+  return result.join('');
 }
 
 /**
